@@ -116,7 +116,37 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.scss */ \"./src/style.scss\");\n\n\n//# sourceURL=webpack://leaderboard/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_pageManager_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/pageManager.js */ \"./src/modules/pageManager.js\");\n/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ \"./src/style.scss\");\n\n\n\nconst pageManager = new _modules_pageManager_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"]();\npageManager.paintScoresToPage();\n\n//# sourceURL=webpack://leaderboard/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/pageManager.js":
+/*!************************************!*\
+  !*** ./src/modules/pageManager.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ PageManager)\n/* harmony export */ });\n/* harmony import */ var _scores_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scores.js */ \"./src/modules/scores.js\");\n\n\nclass PageManager {\n  scoreContainer = document.querySelector('.score-list')\n\n  paintScoresToPage = () => {\n    const allScores = _scores_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"].getScores();\n    allScores.forEach((score) => {\n      const scoreLI = document.createElement('li');\n      scoreLI.textContent = this.generateScoreHTML(score);\n      this.scoreContainer.appendChild(scoreLI);\n    });\n  }\n\n  generateScoreHTML = (score) => `${score.name}: ${score.score}`\n}\n\n//# sourceURL=webpack://leaderboard/./src/modules/pageManager.js?");
+
+/***/ }),
+
+/***/ "./src/modules/score.js":
+/*!******************************!*\
+  !*** ./src/modules/score.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Score)\n/* harmony export */ });\nclass Score {\n  name;\n\n  score;\n\n  constructor(name, score) {\n    this.name = name;\n    this.score = score;\n  }\n}\n\n//# sourceURL=webpack://leaderboard/./src/modules/score.js?");
+
+/***/ }),
+
+/***/ "./src/modules/scores.js":
+/*!*******************************!*\
+  !*** ./src/modules/scores.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Scores)\n/* harmony export */ });\n/* harmony import */ var _score_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./score.js */ \"./src/modules/score.js\");\n\n\nclass Scores {\n  static scores = [new _score_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('Aaron', 2000), new _score_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('Juan', 1850), new _score_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('Juda', 2175)];\n\n  static getScores = () => Scores.scores;\n}\n\n//# sourceURL=webpack://leaderboard/./src/modules/scores.js?");
 
 /***/ })
 
