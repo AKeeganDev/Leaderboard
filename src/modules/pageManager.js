@@ -19,7 +19,6 @@ export default class PageManager {
       Scores.scores = [];
       this.scoreContainer.innerHTML = '';
       scores.forEach((score) => {
-        console.log(`${score.user}: ${score.score}`);
         const scoreToObject = new Score(score.user, score.score);
         Scores.scores.push(scoreToObject);
       });
