@@ -19,7 +19,9 @@
 >1) To get started please open your terminal and navigate to whatever directory you house your project repos. 
 >2) Once there copy and paste this SSH key git@github.com:AKeeganDev/Leaderboard.git
 >3) A new Directory will be made. From there you can cd (change directory) to Leaderboard
->4) Either from your directory or straight from the folder itself, open the index.html file in the /dist folder to view the latest build of the website live on your browser of choice. I suggest using Chrome as that was the browser used in development of this site.
+>4) The source of the website is index.html which is in the dist folder. You can open this in Live Server (if you have the extension) or you can run the following in your terminal while in your root folder: npm install, npm run build, npm start.
+>5) Either methods (Live server or npm start) will open the website in your default browser.
+>6) have fun!
 
 ## Authors
 **Aaron Keegan**
