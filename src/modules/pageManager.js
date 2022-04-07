@@ -36,7 +36,8 @@ export default class PageManager {
     // selector the refresh button
     const refreshButton = document.querySelector('.refresh');
 
-    submitButton.addEventListener('click', () => {
+    submitButton.addEventListener('click', (e) => {
+      e.preventDefault();
       if (!nameInput.value || !scoreInput.value) return;
       Scores.postScore(nameInput.value, scoreInput.value);
       nameInput.value = '';
